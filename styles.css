@@ -1,15 +1,18 @@
 :root {
-  --bg: #fff9ef;
-  --surface: #fffdf8;
+  --bg: #dff6ff;
+  --surface: #fefcff;
   --surface-strong: #ffffff;
-  --surface-accent: #fef0cb;
-  --ink: #183153;
-  --muted: #5a6b84;
-  --primary: #ff7a18;
-  --primary-dark: #d95d00;
-  --secondary: #1a936f;
-  --line: #ecd6ab;
-  --shadow: 0 18px 50px rgba(24, 49, 83, 0.12);
+  --surface-accent: #fff0a8;
+  --ink: #1d3557;
+  --muted: #49617f;
+  --primary: #ff6b6b;
+  --primary-dark: #e64949;
+  --secondary: #00b894;
+  --accent-blue: #4dabf7;
+  --accent-yellow: #ffd93d;
+  --accent-purple: #9b5de5;
+  --line: #bfe7ff;
+  --shadow: 0 18px 40px rgba(77, 171, 247, 0.18);
   --radius-xl: 28px;
   --radius-lg: 20px;
   --radius-md: 14px;
@@ -28,9 +31,10 @@ body {
   font-family: "Nunito", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(255, 179, 71, 0.28), transparent 28%),
-    radial-gradient(circle at top right, rgba(26, 147, 111, 0.18), transparent 24%),
-    linear-gradient(180deg, #fff8ea 0%, #fffdf8 42%, #fff5df 100%);
+    radial-gradient(circle at 12% 16%, rgba(255, 217, 61, 0.42), transparent 14%),
+    radial-gradient(circle at 88% 14%, rgba(155, 93, 229, 0.22), transparent 16%),
+    radial-gradient(circle at 82% 82%, rgba(0, 184, 148, 0.18), transparent 16%),
+    linear-gradient(180deg, #9ddcff 0%, #dff6ff 34%, #fef6cf 100%);
 }
 
 a {
@@ -49,13 +53,15 @@ a {
 .info-card,
 .step-card,
 .hero-card {
-  border: 1px solid rgba(236, 214, 171, 0.9);
+  border: 2px solid rgba(191, 231, 255, 0.95);
   box-shadow: var(--shadow);
 }
 
 .hero,
 .subhero {
-  background: linear-gradient(135deg, rgba(255, 250, 240, 0.95), rgba(255, 239, 196, 0.88));
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.52), transparent 22%),
+    linear-gradient(135deg, rgba(126, 214, 223, 0.92), rgba(255, 240, 168, 0.95) 55%, rgba(255, 176, 176, 0.92));
   border-radius: 34px;
   padding: 24px;
   overflow: hidden;
@@ -66,11 +72,23 @@ a {
 .subhero::after {
   content: "";
   position: absolute;
-  right: -70px;
-  top: -40px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(26, 147, 111, 0.16), transparent 70%);
+  right: -40px;
+  top: -30px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 68%);
+  pointer-events: none;
+}
+
+.hero::before,
+.subhero::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  bottom: -40px;
+  width: 210px;
+  height: 210px;
+  background: radial-gradient(circle, rgba(77, 171, 247, 0.22), transparent 68%);
   pointer-events: none;
 }
 
@@ -97,11 +115,12 @@ a {
 
 .topbar-links a {
   text-decoration: none;
-  color: var(--muted);
+  color: var(--ink);
   font-weight: 700;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.78);
+  border: 2px solid rgba(255, 255, 255, 0.55);
 }
 
 .hero-grid,
@@ -124,7 +143,7 @@ a {
 
 .eyebrow {
   margin: 0 0 8px;
-  color: var(--secondary);
+  color: var(--accent-purple);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -193,26 +212,28 @@ p {
 
 .btn-primary {
   color: #fff;
-  background: linear-gradient(135deg, var(--primary), #ff9549);
-  box-shadow: 0 14px 26px rgba(255, 122, 24, 0.24);
+  background: linear-gradient(135deg, var(--primary), #ff8e53);
+  box-shadow: 0 14px 26px rgba(255, 107, 107, 0.28);
 }
 
 .btn-secondary {
   color: var(--ink);
-  background: #ffffff;
-  border: 1px solid rgba(24, 49, 83, 0.1);
+  background: linear-gradient(135deg, #ffffff, #f4fbff);
+  border: 2px solid rgba(77, 171, 247, 0.2);
 }
 
 .hero-card,
 .panel,
 .info-card,
 .step-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   border-radius: var(--radius-xl);
 }
 
 .hero-card {
   padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 250, 255, 0.94));
 }
 
 .feature-list,
@@ -226,10 +247,13 @@ p {
 .panel {
   margin-top: 28px;
   padding: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 251, 255, 0.95));
 }
 
 .panel-accent {
-  background: linear-gradient(180deg, rgba(255, 249, 231, 0.96), rgba(255, 255, 255, 0.96));
+  background:
+    linear-gradient(180deg, rgba(255, 248, 194, 0.95), rgba(255, 255, 255, 0.98));
 }
 
 .section-heading {
@@ -252,6 +276,35 @@ p {
 .info-card,
 .step-card {
   padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card:nth-child(3n + 1),
+.step-card:nth-child(3n + 1) {
+  background: linear-gradient(180deg, #ffffff 0%, #eef9ff 100%);
+}
+
+.info-card:nth-child(3n + 2),
+.step-card:nth-child(3n + 2) {
+  background: linear-gradient(180deg, #ffffff 0%, #fff9da 100%);
+}
+
+.info-card:nth-child(3n + 3),
+.step-card:nth-child(3n + 3) {
+  background: linear-gradient(180deg, #ffffff 0%, #eefcf7 100%);
+}
+
+.info-card::after,
+.step-card::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 217, 61, 0.18);
 }
 
 .card-number {
@@ -263,15 +316,16 @@ p {
   margin-bottom: 14px;
   border-radius: 999px;
   font-weight: 800;
-  background: var(--surface-accent);
-  color: var(--primary-dark);
+  background: linear-gradient(135deg, var(--accent-yellow), #ffb703);
+  color: #7a4b00;
 }
 
 .guide-box {
   margin-bottom: 18px;
   padding: 20px 22px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(26, 147, 111, 0.08), rgba(255, 122, 24, 0.09));
+  background: linear-gradient(135deg, rgba(77, 171, 247, 0.18), rgba(255, 217, 61, 0.28), rgba(0, 184, 148, 0.16));
+  border: 2px dashed rgba(77, 171, 247, 0.35);
 }
 
 .steps {
@@ -294,8 +348,8 @@ p {
 .form-section {
   padding: 20px;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(236, 214, 171, 0.9);
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid rgba(191, 231, 255, 0.95);
 }
 
 .field-group {
@@ -315,19 +369,19 @@ label {
 input,
 textarea {
   width: 100%;
-  border: 1px solid #d6c39a;
+  border: 2px solid #b8def6;
   border-radius: 14px;
   padding: 14px 16px;
   font: inherit;
   color: var(--ink);
-  background: var(--surface-strong);
+  background: linear-gradient(180deg, #ffffff, #f6fcff);
   resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-  outline: 3px solid rgba(255, 122, 24, 0.16);
-  border-color: var(--primary);
+  outline: 4px solid rgba(255, 217, 61, 0.28);
+  border-color: var(--accent-blue);
 }
 
 .checkbox-grid {
@@ -342,8 +396,8 @@ textarea:focus {
   gap: 10px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: #fff;
-  border: 1px solid rgba(236, 214, 171, 0.95);
+  background: linear-gradient(135deg, #ffffff, #f3fbff);
+  border: 2px solid rgba(191, 231, 255, 0.95);
   font-weight: 700;
 }
 
