@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 1 | Mi página de dinosaurios</title>
+  <meta
+    name="description"
+    content="Práctica 1 del practicario de 2do: guía de trabajo sobre dinosaurios, respuestas y descarga automática en PDF."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="practice-1">
+  <div class="site-shell">
+    <header class="subhero">
+      <nav class="topbar">
+        <a class="brand" href="index.html">Practicario 2do</a>
+        <div class="topbar-links">
+          <a href="index.html">Inicio</a>
+          <a href="#formulario">Responder</a>
+        </div>
+      </nav>
+
+      <section class="subhero-content">
+        <div>
+          <p class="eyebrow">Práctica 1</p>
+          <h1>Mi página de dinosaurios</h1>
+          <p>
+            Lee la guía, trabaja en el sistema del profesor y después responde este practicario.
+            Al final podrás descargar tu PDF con tu nombre y el nombre de la práctica.
+          </p>
+        </div>
+        <div class="subhero-actions">
+          <a
+            class="btn btn-secondary"
+            href="https://prof-luis1986.github.io/sistema_web_2do/"
+            target="_blank"
+            rel="noreferrer"
+          >Abrir sistema del profesor</a>
+          <a class="btn btn-primary" href="#formulario">Ir al formulario</a>
+        </div>
+      </section>
+    </header>
+
+    <main class="practice-layout">
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Guía de trabajo</p>
+          <h2>Proyecto: “Mi página de dinosaurios”</h2>
+        </div>
+
+        <div class="guide-box">
+          <h3>¿Qué vamos a hacer?</h3>
+          <p>
+            Hoy vas a convertirte en un pequeño investigador y creador digital.
+            Tu misión será crear una página web sobre un dinosaurio usando el sistema que te proporcionará tu profesor.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>¿Qué aprenderás?</h3>
+            <ul class="check-list">
+              <li>Investigar información sencilla sobre un dinosaurio</li>
+              <li>Organizar ideas antes de crear</li>
+              <li>Usar herramientas digitales básicas</li>
+              <li>Crear una página con orden, creatividad y presentación</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>¿Qué necesitas?</h3>
+            <ul class="check-list">
+              <li>Computadora o tablet</li>
+              <li>Acceso al sistema web del profesor</li>
+              <li>Imágenes de dinosaurios</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Antes de empezar</h3>
+            <ul class="check-list">
+              <li>¿Qué dinosaurio te gusta más?</li>
+              <li>¿Qué sabes de él?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <h3>Paso 1: Explora el sistema</h3>
+            <p>Entra al sistema web, observa los botones y herramientas e identifica título, texto e imagen.</p>
+          </article>
+          <article class="step-card">
+            <h3>Paso 2: Elige tu dinosaurio</h3>
+            <p>Puedes elegir Tiranosaurio Rex, Triceratops, Velociraptor, Estegosaurio u otro dinosaurio que conozcas.</p>
+          </article>
+          <article class="step-card">
+            <h3>Paso 3: Organiza tu información</h3>
+            <p>Piensa en el nombre, qué comía, cómo era y dónde vivía antes de construir tu página.</p>
+          </article>
+          <article class="step-card">
+            <h3>Paso 4: Crea tu página</h3>
+            <p>Agrega título, imagen e información usando oraciones cortas y claras.</p>
+          </article>
+          <article class="step-card">
+            <h3>Paso 5: Usa la biblioteca</h3>
+            <p>Acomoda los elementos, mejora el diseño y haz que tu trabajo se vea ordenado y bonito.</p>
+          </article>
+          <article class="step-card">
+            <h3>Paso 6: Revisa tu trabajo</h3>
+            <p>Confirma que tiene título, imagen, información, orden y que todo se entiende bien.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="formulario" class="panel panel-accent">
+        <div class="section-heading">
+          <p class="eyebrow">Practicario</p>
+          <h2>Responde aquí tu práctica</h2>
+        </div>
+
+        <form id="practiceForm" class="practice-form">
+          <div class="card-grid two-cols">
+            <div class="field-group">
+              <label for="studentName">Nombre del alumno</label>
+              <input id="studentName" name="studentName" type="text" placeholder="Escribe tu nombre completo" required>
+            </div>
+
+            <div class="field-group">
+              <label for="groupName">Grupo o grado</label>
+              <input id="groupName" name="groupName" type="text" placeholder="Ejemplo: 2do A">
+            </div>
+          </div>
+
+          <section class="form-section">
+            <h3>Parte 1: Investigo mi dinosaurio</h3>
+            <div class="card-grid two-cols">
+              <div class="field-group">
+                <label for="dinoName">¿Cómo se llama tu dinosaurio?</label>
+                <input id="dinoName" name="dinoName" type="text" required>
+              </div>
+              <div class="field-group">
+                <label for="dinoFood">¿Qué comía?</label>
+                <input id="dinoFood" name="dinoFood" type="text" required>
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="dinoLook">¿Cómo era?</label>
+              <textarea id="dinoLook" name="dinoLook" rows="3" placeholder="Grande, pequeño, con dientes, cuernos, placas..."></textarea>
+            </div>
+            <div class="field-group">
+              <label for="dinoHabitat">¿Dónde vivía?</label>
+              <textarea id="dinoHabitat" name="dinoHabitat" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="dinoSentence">Escribe una oración sobre tu dinosaurio</label>
+              <textarea id="dinoSentence" name="dinoSentence" rows="3" required></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 2: Pienso antes de crear</h3>
+            <div class="field-group">
+              <label for="firstElement">¿Qué pondrás primero en tu página?</label>
+              <textarea id="firstElement" name="firstElement" rows="2"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="imagePlace">¿Dónde irá la imagen?</label>
+              <textarea id="imagePlace" name="imagePlace" rows="2"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="textCount">¿Cuántos textos escribirás?</label>
+              <textarea id="textCount" name="textCount" rows="2"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 3: Diseño mi página</h3>
+            <div class="field-group">
+              <label for="pageSketch">Describe cómo quieres que se vea tu página</label>
+              <textarea id="pageSketch" name="pageSketch" rows="4" placeholder="Incluye título, imagen y texto"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 4: Trabajo en el sistema</h3>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Entré al sistema"> Entré al sistema</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Exploré los elementos"> Exploré los elementos</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Elegí mi dinosaurio"> Elegí mi dinosaurio</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Escribí el título"> Escribí el título</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Agregué una imagen"> Agregué una imagen</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Escribí información"> Escribí información</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Usé elementos de la biblioteca"> Usé elementos de la biblioteca</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Organicé mi página"> Organicé mi página</label>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 5: Reflexiono</h3>
+            <div class="field-group">
+              <label for="likedPage">¿Te gustó tu página? ¿Por qué?</label>
+              <textarea id="likedPage" name="likedPage" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="easyPart">¿Qué fue lo más fácil?</label>
+              <textarea id="easyPart" name="easyPart" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="hardPart">¿Qué fue lo más difícil?</label>
+              <textarea id="hardPart" name="hardPart" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="learnedPart">¿Qué aprendiste sobre los dinosaurios?</label>
+              <textarea id="learnedPart" name="learnedPart" rows="3"></textarea>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+            <button type="button" class="btn btn-secondary" id="clearBtn">Limpiar respuestas</button>
+            <button type="submit" class="btn btn-primary">Descargar PDF</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
