@@ -1,4 +1,111 @@
-const practiceName = "Practica 1 - Mi pagina de dinosaurios";
+const practiceConfigs = {
+  "practice-1": {
+    practiceName: "Practica 1 - Mi pagina de dinosaurios",
+    requiredIds: ["studentName", "dinoName", "dinoFood", "dinoSentence"],
+    validationMessage: "Completa tu nombre, el dinosaurio, qué comía y una oración antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
+        ],
+      },
+      {
+        title: "Parte 1: Investigo mi dinosaurio",
+        lines: [
+          `Nombre del dinosaurio: ${getFieldValue(form, "dinoName")}`,
+          `Que comia: ${getFieldValue(form, "dinoFood")}`,
+          `Como era: ${getFieldValue(form, "dinoLook") || "Sin respuesta"}`,
+          `Donde vivia: ${getFieldValue(form, "dinoHabitat") || "Sin respuesta"}`,
+          `Oracion: ${getFieldValue(form, "dinoSentence")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Pienso antes de crear",
+        lines: [
+          `Que pondras primero en tu pagina: ${getFieldValue(form, "firstElement") || "Sin respuesta"}`,
+          `Donde ira la imagen: ${getFieldValue(form, "imagePlace") || "Sin respuesta"}`,
+          `Cuantos textos escribiras: ${getFieldValue(form, "textCount") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Diseno mi pagina",
+        lines: [
+          `Descripcion del diseno: ${getFieldValue(form, "pageSketch") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 4: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Parte 5: Reflexiono",
+        lines: [
+          `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
+          `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
+          `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
+          `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
+        ],
+      },
+    ],
+  },
+  "practice-2": {
+    practiceName: "Practica 2 - Mi pagina del sistema solar",
+    requiredIds: ["studentName", "spaceTopic", "planetCount", "spaceSentence"],
+    validationMessage: "Completa tu nombre, el tema elegido, la cantidad de planetas y una oración antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
+        ],
+      },
+      {
+        title: "Parte 1: Investigo el sistema solar",
+        lines: [
+          `Tema elegido: ${getFieldValue(form, "spaceTopic")}`,
+          `Cantidad de planetas: ${getFieldValue(form, "planetCount")}`,
+          `Planeta o cuerpo celeste favorito: ${getFieldValue(form, "favoriteBody") || "Sin respuesta"}`,
+          `Caracteristicas del tema: ${getFieldValue(form, "spaceFeatures") || "Sin respuesta"}`,
+          `Oracion: ${getFieldValue(form, "spaceSentence")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Planeo mi pagina",
+        lines: [
+          `Titulo de la pagina: ${getFieldValue(form, "pageTitle") || "Sin respuesta"}`,
+          `Imagen principal: ${getFieldValue(form, "mainImage") || "Sin respuesta"}`,
+          `Secciones de la pagina: ${getFieldValue(form, "pageSections") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Diseno espacial",
+        lines: [
+          `Descripcion del diseno: ${getFieldValue(form, "spaceDesign") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 4: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Parte 5: Reflexiono",
+        lines: [
+          `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
+          `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
+          `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
+          `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
+        ],
+      },
+    ],
+  },
+};
 
 function normalizeFileName(value) {
   return value
@@ -15,57 +122,6 @@ function getCheckedValues(form, name) {
 function getFieldValue(form, id) {
   const field = form.querySelector(`#${id}`);
   return field ? field.value.trim() : "";
-}
-
-function buildPdfSections(form) {
-  return [
-    {
-      title: "Datos del alumno",
-      lines: [
-        `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
-        `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
-      ],
-    },
-    {
-      title: "Parte 1: Investigo mi dinosaurio",
-      lines: [
-        `Nombre del dinosaurio: ${getFieldValue(form, "dinoName")}`,
-        `Que comia: ${getFieldValue(form, "dinoFood")}`,
-        `Como era: ${getFieldValue(form, "dinoLook") || "Sin respuesta"}`,
-        `Donde vivia: ${getFieldValue(form, "dinoHabitat") || "Sin respuesta"}`,
-        `Oracion: ${getFieldValue(form, "dinoSentence")}`,
-      ],
-    },
-    {
-      title: "Parte 2: Pienso antes de crear",
-      lines: [
-        `Que pondras primero en tu pagina: ${getFieldValue(form, "firstElement") || "Sin respuesta"}`,
-        `Donde ira la imagen: ${getFieldValue(form, "imagePlace") || "Sin respuesta"}`,
-        `Cuantos textos escribiras: ${getFieldValue(form, "textCount") || "Sin respuesta"}`,
-      ],
-    },
-    {
-      title: "Parte 3: Diseno mi pagina",
-      lines: [
-        `Descripcion del diseno: ${getFieldValue(form, "pageSketch") || "Sin respuesta"}`,
-      ],
-    },
-    {
-      title: "Parte 4: Trabajo en el sistema",
-      lines: [
-        `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
-      ],
-    },
-    {
-      title: "Parte 5: Reflexiono",
-      lines: [
-        `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
-        `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
-        `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
-        `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
-      ],
-    },
-  ];
 }
 
 function addWrappedText(pdf, text, x, y, options = {}) {
@@ -86,7 +142,7 @@ function addWrappedText(pdf, text, x, y, options = {}) {
   return y;
 }
 
-function generatePdf(form) {
+function generatePdf(form, config) {
   const jspdfApi = window.jspdf;
 
   if (!jspdfApi || !jspdfApi.jsPDF) {
@@ -97,7 +153,7 @@ function generatePdf(form) {
   const pdf = new jsPDF({ unit: "mm", format: "a4" });
   const studentName = getFieldValue(form, "studentName");
   const fileStudentName = normalizeFileName(studentName || "Alumno");
-  const filePracticeName = normalizeFileName(practiceName);
+  const filePracticeName = normalizeFileName(config.practiceName);
 
   pdf.setFillColor(255, 122, 24);
   pdf.rect(0, 0, 210, 26, "F");
@@ -108,7 +164,7 @@ function generatePdf(form) {
 
   pdf.setTextColor(24, 49, 83);
   pdf.setFontSize(14);
-  pdf.text(practiceName, 14, 36);
+  pdf.text(config.practiceName, 14, 36);
 
   pdf.setFont("helvetica", "normal");
   pdf.setFontSize(11);
@@ -116,7 +172,7 @@ function generatePdf(form) {
   y = addWrappedText(pdf, `Alumno: ${studentName || "No especificado"}`, 14, y);
   y = addWrappedText(pdf, `Fecha de descarga: ${new Date().toLocaleString("es-MX")}`, 14, y + 1);
 
-  buildPdfSections(form).forEach((section) => {
+  config.sections(form).forEach((section) => {
     if (y > 260) {
       pdf.addPage();
       y = 20;
@@ -151,12 +207,11 @@ function setMessage(message, isError = false) {
   messageNode.classList.toggle("is-error", isError);
 }
 
-function validateRequiredFields(form) {
-  const requiredIds = ["studentName", "dinoName", "dinoFood", "dinoSentence"];
-  const missing = requiredIds.filter((id) => !getFieldValue(form, id));
+function validateRequiredFields(form, config) {
+  const missing = config.requiredIds.filter((id) => !getFieldValue(form, id));
 
   if (missing.length > 0) {
-    setMessage("Completa tu nombre, el dinosaurio, qué comía y una oración antes de descargar el PDF.", true);
+    setMessage(config.validationMessage, true);
     return false;
   }
 
@@ -169,23 +224,25 @@ function resetForm(form) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const pageKey = document.body.dataset.page;
+  const config = practiceConfigs[pageKey];
   const form = document.querySelector("#practiceForm");
   const clearBtn = document.querySelector("#clearBtn");
 
-  if (!form) {
+  if (!form || !config) {
     return;
   }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (!validateRequiredFields(form)) {
+    if (!validateRequiredFields(form, config)) {
       return;
     }
 
     try {
       setMessage("Generando PDF...");
-      generatePdf(form);
+      generatePdf(form, config);
       setMessage("Tu PDF se descargo correctamente.");
     } catch (error) {
       setMessage(error.message || "No fue posible generar el PDF.", true);
