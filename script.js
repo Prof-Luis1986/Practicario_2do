@@ -105,6 +105,59 @@ const practiceConfigs = {
       },
     ],
   },
+  "practice-3": {
+    practiceName: "Practica 3 - Historia de la informatica",
+    requiredIds: ["studentName", "historyTopic", "oldDevice", "historySentence"],
+    validationMessage: "Completa tu nombre, el tema elegido, el invento o aparato investigado y una oración antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
+        ],
+      },
+      {
+        title: "Parte 1: Investigo la historia de la informatica",
+        lines: [
+          `Tema elegido: ${getFieldValue(form, "historyTopic")}`,
+          `Aparato o invento investigado: ${getFieldValue(form, "oldDevice")}`,
+          `Como ha cambiado la tecnologia: ${getFieldValue(form, "historyChange") || "Sin respuesta"}`,
+          `Dato interesante: ${getFieldValue(form, "favoriteFact") || "Sin respuesta"}`,
+          `Oracion: ${getFieldValue(form, "historySentence")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Planeo mi pagina",
+        lines: [
+          `Titulo de la pagina: ${getFieldValue(form, "historyTitle") || "Sin respuesta"}`,
+          `Partes de la pagina: ${getFieldValue(form, "historySections") || "Sin respuesta"}`,
+          `Imagenes y audios de la biblioteca: ${getFieldValue(form, "libraryResources") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Diseno y recursos",
+        lines: [
+          `Descripcion del diseno: ${getFieldValue(form, "historyDesign") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 4: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Parte 5: Reflexiono",
+        lines: [
+          `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
+          `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
+          `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
+          `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
+        ],
+      },
+    ],
+  },
 };
 
 function normalizeFileName(value) {
