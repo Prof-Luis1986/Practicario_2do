@@ -158,6 +158,59 @@ const practiceConfigs = {
       },
     ],
   },
+  "practice-4": {
+    practiceName: "Practica 4 - Generaciones de la computadora",
+    requiredIds: ["studentName", "practiceTitle", "generationCount", "practiceSentence"],
+    validationMessage: "Completa tu nombre, el titulo de tu pagina, cuantas generaciones investigarás y una oración antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
+        ],
+      },
+      {
+        title: "Parte 1: Investigo las generaciones de la computadora",
+        lines: [
+          `Titulo de la pagina: ${getFieldValue(form, "practiceTitle")}`,
+          `Cantidad de generaciones: ${getFieldValue(form, "generationCount")}`,
+          `Generacion favorita: ${getFieldValue(form, "favoriteGeneration") || "Sin respuesta"}`,
+          `Dato interesante: ${getFieldValue(form, "interestingFact") || "Sin respuesta"}`,
+          `Oracion: ${getFieldValue(form, "practiceSentence")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Planeo mi sitio web",
+        lines: [
+          `Secciones del sitio: ${getFieldValue(form, "siteSections") || "Sin respuesta"}`,
+          `Videos del editor que agregara: ${getFieldValue(form, "editorVideos") || "Sin respuesta"}`,
+          `Como organizara la informacion: ${getFieldValue(form, "contentOrder") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Diseno y construccion",
+        lines: [
+          `Descripcion del diseno: ${getFieldValue(form, "siteDesign") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 4: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Parte 5: Reflexiono",
+        lines: [
+          `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
+          `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
+          `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
+          `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
+        ],
+      },
+    ],
+  },
 };
 
 function normalizeFileName(value) {
@@ -276,11 +329,51 @@ function resetForm(form) {
   setMessage("Las respuestas fueron limpiadas.");
 }
 
+async function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const helper = document.createElement("textarea");
+  helper.value = text;
+  helper.setAttribute("readonly", "");
+  helper.style.position = "absolute";
+  helper.style.left = "-9999px";
+  document.body.appendChild(helper);
+  helper.select();
+  document.execCommand("copy");
+  document.body.removeChild(helper);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const pageKey = document.body.dataset.page;
   const config = practiceConfigs[pageKey];
   const form = document.querySelector("#practiceForm");
   const clearBtn = document.querySelector("#clearBtn");
+  const copyButtons = document.querySelectorAll("[data-copy-target]");
+
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const targetId = button.dataset.copyTarget;
+      const source = document.querySelector(`#${targetId}`);
+
+      if (!source) {
+        return;
+      }
+
+      try {
+        await copyText(source.textContent.trim());
+        const originalText = button.textContent;
+        button.textContent = "Texto copiado";
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1800);
+      } catch (error) {
+        setMessage("No fue posible copiar el texto.", true);
+      }
+    });
+  });
 
   if (!form || !config) {
     return;
