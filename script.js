@@ -211,6 +211,65 @@ const practiceConfigs = {
       },
     ],
   },
+  "practice-5": {
+    practiceName: "Practica 5 - La inflacion y los precios",
+    requiredIds: ["studentName", "inflationConcept", "priceComparison", "inflationSentence"],
+    validationMessage: "Completa tu nombre, la explicacion de inflacion, la comparacion de precios y una oracion antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo o grado: ${getFieldValue(form, "groupName") || "No especificado"}`,
+        ],
+      },
+      {
+        title: "Parte 1: Entiendo la inflacion",
+        lines: [
+          `Que es la inflacion: ${getFieldValue(form, "inflationConcept")}`,
+          `Comparacion de precios: ${getFieldValue(form, "priceComparison")}`,
+          `Como afecta a las personas: ${getFieldValue(form, "howItAffects") || "Sin respuesta"}`,
+          `Oracion: ${getFieldValue(form, "inflationSentence")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Reflexiono sobre el dinero",
+        lines: [
+          `El ahorro en la alcancia: ${getFieldValue(form, "piggyBank") || "Sin respuesta"}`,
+          `El 'superpoder' del billete: ${getFieldValue(form, "moneyPower") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Empatia y decisiones",
+        lines: [
+          `Decisiones en el supermercado: ${getFieldValue(form, "supermarketDecisions") || "Sin respuesta"}`,
+          `Diversion sin dinero: ${getFieldValue(form, "funWithoutMoney") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 4: Soluciones creativas",
+        lines: [
+          `Mi regla para los precios: ${getFieldValue(form, "creativeRule") || "Sin respuesta"}`,
+          `Cuidar lo que tenemos: ${getFieldValue(form, "careReason") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 5: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Parte 6: Reflexiono",
+        lines: [
+          `Te gusto tu pagina y por que: ${getFieldValue(form, "likedPage") || "Sin respuesta"}`,
+          `Lo mas facil: ${getFieldValue(form, "easyPart") || "Sin respuesta"}`,
+          `Lo mas dificil: ${getFieldValue(form, "hardPart") || "Sin respuesta"}`,
+          `Lo que aprendiste: ${getFieldValue(form, "learnedPart") || "Sin respuesta"}`,
+        ],
+      },
+    ],
+  },
 };
 
 function normalizeFileName(value) {

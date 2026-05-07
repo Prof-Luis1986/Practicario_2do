@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 5 | La inflación y los precios</title>
+  <meta name="description" content="Práctica 5: Aprende sobre la inflación, por qué suben los precios y cómo afecta nuestra economía.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --accent-finance: #27ae60; }
+    .panel-accent { border-top-color: var(--accent-finance); }
+    .eyebrow { color: var(--accent-finance); }
+    .btn-primary { background-color: var(--accent-finance); border-color: #219150; }
+    .btn-primary:hover { background-color: #219150; }
+    .step-card h3 { color: var(--accent-finance); }
+    .price-list { list-style: none; padding: 0; }
+    .price-list li { margin-bottom: 0.5rem; font-size: 1.1rem; }
+  </style>
+</head>
+<body data-page="practice-5">
+  <div class="site-shell">
+    <header class="subhero">
+      <nav class="topbar">
+        <a class="brand" href="index.html">Practicario 2do</a>
+        <div class="topbar-links">
+          <a href="index.html">Inicio</a>
+          <a href="#formulario">Responder</a>
+        </div>
+      </nav>
+      <section class="subhero-content">
+        <div>
+          <p class="eyebrow">Práctica 5 💸</p>
+          <h1>La inflación: ¿Por qué suben los precios?</h1>
+          <p>
+            Aprende cómo funciona el dinero, por qué las cosas cuestan más que antes y crea una página informativa
+            usando el sistema del profesor. ¡Es hora de ser expertos en economía! 📈
+          </p>
+        </div>
+        <div class="subhero-actions">
+          <a class="btn btn-secondary" href="https://prof-luis1986.github.io/sistema_web_2do/" target="_blank" rel="noreferrer">Abrir sistema del profesor</a>
+          <a class="btn btn-primary" href="#formulario">Ir al formulario</a>
+        </div>
+      </section>
+    </header>
+
+    <main class="practice-layout">
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Guía de trabajo</p>
+          <h2>Proyecto: “Mi página de economía” 🛒</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>¿Qué vamos a hacer?</h3>
+            <p>Crearás una página web que explique la inflación de forma sencilla. Debes incluir:</p>
+            <ul class="check-list">
+              <li>Título llamativo (h1) 🥖</li>
+              <li>Explicación con párrafos (p) 🥛</li>
+              <li>Lista de comparación de precios (ul/ol) 🌮</li>
+              <li>Muchos emojis y colores 💸📈</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Ejemplo de Precios</h3>
+            <ul class="price-list">
+              <li>🥖 Pan: antes $8 → <strong>ahora $12</strong></li>
+              <li>🥛 Leche: antes $20 → <strong>ahora $30</strong></li>
+              <li>🌮 Tortillas: antes $18 → <strong>ahora $24</strong></li>
+              <li>🥤 Refresco: antes $15 → <strong>ahora $20</strong></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="steps">
+          <article class="step-card"><h3>1. Investiga 💸</h3><p>Piensa en qué cosas han subido de precio en la tiendita.</p></article>
+          <article class="step-card"><h3>2. Diseña 🎨</h3><p>Usa colores verdes y dorados para que tu página parezca de dinero.</p></article>
+          <article class="step-card"><h3>3. Escribe ✍️</h3><p>Explica qué es la inflación usando títulos y párrafos claros.</p></article>
+          <article class="step-card"><h3>4. Compara 📊</h3><p>Crea una lista con los precios de antes y los de ahora.</p></article>
+        </div>
+      </section>
+
+      <section id="formulario" class="panel panel-accent">
+        <div class="section-heading">
+          <p class="eyebrow">Practicario</p>
+          <h2>Responde aquí tu práctica 📝</h2>
+        </div>
+
+        <form id="practiceForm" class="practice-form">
+          <div class="card-grid two-cols">
+            <div class="field-group">
+              <label for="studentName">Nombre completo del alumno</label>
+              <input id="studentName" name="studentName" type="text" placeholder="Escribe tu nombre y apellidos" required>
+            </div>
+            <div class="field-group">
+              <label for="groupName">Grupo o grado</label>
+              <input id="groupName" name="groupName" type="text" placeholder="Ejemplo: 2do B">
+            </div>
+          </div>
+
+          <section class="form-section">
+            <h3>Parte 1: Entiendo la inflación 📈</h3>
+            <div class="field-group">
+              <label for="inflationConcept">¿Qué es la inflación? (Explícalo con tus palabras) 🍦</label>
+              <textarea id="inflationConcept" name="inflationConcept" rows="3" placeholder="Si un helado antes costaba $10 y ahora $15..." required></textarea>
+            </div>
+            <div class="field-group">
+              <label for="priceComparison">Escribe un ejemplo de cómo cambian los precios (antes vs ahora) 🥖</label>
+              <textarea id="priceComparison" name="priceComparison" rows="3" required></textarea>
+            </div>
+            <div class="field-group">
+              <label for="howItAffects">¿Cómo afecta la inflación a las personas y a las familias? 🛒</label>
+              <textarea id="howItAffects" name="howItAffects" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="inflationSentence">Escribe una oración sobre la inflación ✍️</label>
+              <textarea id="inflationSentence" name="inflationSentence" rows="2" required></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 2: Reflexiono sobre el dinero 💰</h3>
+            <div class="field-group">
+              <label for="piggyBank">Si guardas dinero un año en tu alcancía, ¿podrás comprar lo mismo después? 🐷</label>
+              <textarea id="piggyBank" name="piggyBank" rows="2"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="moneyPower">¿Qué podrías hacer para que tu dinero no pierda su 'poder'? 💪</label>
+              <textarea id="moneyPower" name="moneyPower" rows="2"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 3: Empatía y decisiones 🤝</h3>
+            <div class="field-group">
+              <label for="supermarketDecisions">Si la leche sube mucho, ¿qué decisiones debe tomar mamá o papá? 🥛</label>
+              <textarea id="supermarketDecisions" name="supermarketDecisions" rows="2"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="funWithoutMoney">¿De qué formas podrías divertirte sin usar dinero? 🌳</label>
+              <textarea id="funWithoutMoney" name="funWithoutMoney" rows="2"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 4: Soluciones creativas 💡</h3>
+            <div class="field-group">
+              <label for="creativeRule">Si inventaras una regla para que los precios no suban, ¿cuál sería? 📏</label>
+              <textarea id="creativeRule" name="creativeRule" rows="2"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="careReason">¿Por qué debemos cuidar más nuestras cosas (ropa, juguetes) hoy en día? ✨</label>
+              <textarea id="careReason" name="careReason" rows="2"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 5: Trabajo en el sistema</h3>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Entré al sistema"> Entré al sistema</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Usé títulos h1 y h2"> Usé títulos h1 y h2</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Escribí párrafos explicativos"> Escribí párrafos</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Creé una lista de precios"> Creé una lista de precios</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Usé emojis 💸🛒"> Usé muchos emojis</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Cambié colores de fondo"> Cambié colores</label>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 6: Reflexiono</h3>
+            <div class="field-group">
+              <label for="likedPage">¿Te gustó tu página? ¿Por qué?</label>
+              <textarea id="likedPage" name="likedPage" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="easyPart">¿Qué fue lo más fácil?</label>
+              <textarea id="easyPart" name="easyPart" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="hardPart">¿Qué fue lo más difícil?</label>
+              <textarea id="hardPart" name="hardPart" rows="3"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="learnedPart">¿Qué aprendiste sobre el dinero y la inflación?</label>
+              <textarea id="learnedPart" name="learnedPart" rows="3"></textarea>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+            <button type="button" class="btn btn-secondary" id="clearBtn">Limpiar respuestas</button>
+            <button type="submit" class="btn btn-primary">Descargar PDF</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
