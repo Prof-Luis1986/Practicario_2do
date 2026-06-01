@@ -270,6 +270,56 @@ const practiceConfigs = {
       },
     ],
   },
+  "exam-axolotl": {
+    practiceName: "Examen Practico - Mi pagina sobre los ajolotes",
+    requiredIds: ["studentName", "axolotlFact1", "axolotlFact2", "axolotlFact3", "axolotlFact4", "pageTitle"],
+    validationMessage: "Completa tu nombre, los 4 datos del video y el titulo de tu pagina antes de descargar el PDF.",
+    sections: (form) => [
+      {
+        title: "Datos del alumno",
+        lines: [
+          `Nombre: ${getFieldValue(form, "studentName") || "No especificado"}`,
+          `Grupo: ${getFieldValue(form, "groupName") || "No especificado"}`,
+          `Fecha: ${getFieldValue(form, "examDate") || "No especificada"}`,
+          "Valor: 10 puntos",
+        ],
+      },
+      {
+        title: "Parte 1: Datos sobre los ajolotes",
+        lines: [
+          `Dato 1: ${getFieldValue(form, "axolotlFact1")}`,
+          `Dato 2: ${getFieldValue(form, "axolotlFact2")}`,
+          `Dato 3: ${getFieldValue(form, "axolotlFact3")}`,
+          `Dato 4: ${getFieldValue(form, "axolotlFact4")}`,
+        ],
+      },
+      {
+        title: "Parte 2: Planeo mi pagina",
+        lines: [
+          `Titulo de la pagina: ${getFieldValue(form, "pageTitle")}`,
+          `Organizacion de bloques: ${getFieldValue(form, "pageOrder") || "Sin respuesta"}`,
+          `Colores adecuados: ${getFieldValue(form, "pageColors") || "Sin respuesta"}`,
+        ],
+      },
+      {
+        title: "Parte 3: Trabajo en el sistema",
+        lines: [
+          `Actividades completadas: ${getCheckedValues(form, "progress").join(", ") || "Ninguna marcada"}`,
+        ],
+      },
+      {
+        title: "Evaluacion",
+        lines: [
+          "Escribio 4 datos del video: 4 puntos",
+          "La pagina esta ordenada: 2 puntos",
+          "Uso bloques correctamente: 2 puntos",
+          "Uso colores y diseno adecuado: 1 punto",
+          "Escribio su nombre: 1 punto",
+          "Total: 10 puntos",
+        ],
+      },
+    ],
+  },
 };
 
 function normalizeFileName(value) {

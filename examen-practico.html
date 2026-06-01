@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen Práctico | Mi página sobre los ajolotes</title>
+  <meta
+    name="description"
+    content="Examen práctico de tecnología para 2° de primaria: crear una página sencilla sobre los ajolotes usando bloques."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --accent-axolotl: #00a6a6; }
+    .panel-accent { border-top-color: var(--accent-axolotl); }
+    .eyebrow { color: var(--accent-axolotl); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent-axolotl), #ff7eb6); }
+    .step-card h3 { color: var(--accent-axolotl); }
+  </style>
+</head>
+<body data-page="exam-axolotl">
+  <div class="site-shell">
+    <header class="subhero">
+      <nav class="topbar">
+        <a class="brand" href="index.html">Practicario 2do</a>
+        <div class="topbar-links">
+          <a href="index.html">Inicio</a>
+          <a href="#video-apoyo">Video de apoyo</a>
+          <a href="#formulario">Responder</a>
+          <a href="#evaluacion">Evaluación</a>
+        </div>
+      </nav>
+
+      <section class="subhero-content">
+        <div>
+          <p class="eyebrow">Examen Práctico de Tecnología - 2° de Primaria</p>
+          <h1>Mi página sobre los ajolotes</h1>
+          <p>
+            El video "¿Por qué los ajolotes son mágicos?" se verá primero en clase antes del examen.
+            Después crearás una página sencilla sobre los ajolotes usando bloques. Valor total: 10 puntos.
+          </p>
+        </div>
+        <div class="subhero-actions">
+          <a
+            class="btn btn-secondary"
+            href="https://prof-luis1986.github.io/sistema_web_2do/"
+            target="_blank"
+            rel="noreferrer"
+          >Abrir sistema del profesor</a>
+          <a class="btn btn-primary" href="#formulario">Ir al examen</a>
+        </div>
+      </section>
+    </header>
+
+    <main class="practice-layout">
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Instrucciones</p>
+          <h2>Trabajo: "Mi página sobre los ajolotes"</h2>
+        </div>
+
+        <div class="guide-box">
+          <h3>¿Qué debes hacer?</h3>
+          <p>
+            Primero observa el video con tu profesor en clase, antes del examen. Después entra al sistema
+            y crea una página sencilla, clara y ordenada sobre los ajolotes.
+          </p>
+        </div>
+
+        <div id="video-apoyo" class="video-support">
+          <div class="section-heading">
+            <p class="eyebrow">Video de apoyo</p>
+            <h3>¿Por qué los ajolotes son mágicos?</h3>
+            <p>
+              Este video solo debe verse en esta página si quedó alguna duda, porque se revisará primero
+              en clase antes del examen.
+            </p>
+          </div>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/grIVETx7l5s"
+              title="¿Por qué los ajolotes son mágicos?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Tu página debe tener</h3>
+            <ul class="check-list">
+              <li>Un título</li>
+              <li>4 datos sobre los ajolotes</li>
+              <li>Texto claro y ordenado</li>
+              <li>Colores adecuados</li>
+              <li>Tu nombre al final</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3>Entrega</h3>
+            <p>
+              Al finalizar tu página sobre los ajolotes, debes descargar tu PDF con tus respuestas
+              para entregar la evidencia del examen.
+            </p>
+          </article>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <h3>1. Observa</h3>
+            <p>Mira en clase el video "¿Por qué los ajolotes son mágicos?" con atención.</p>
+          </article>
+          <article class="step-card">
+            <h3>2. Elige datos</h3>
+            <p>Escribe 4 datos importantes o interesantes sobre los ajolotes.</p>
+          </article>
+          <article class="step-card">
+            <h3>3. Usa bloques</h3>
+            <p>Agrega título, textos y colores usando los bloques del sistema.</p>
+          </article>
+          <article class="step-card">
+            <h3>4. Revisa</h3>
+            <p>Confirma que tu página esté ordenada y que tenga tu nombre al final.</p>
+          </article>
+          <article class="step-card">
+            <h3>5. Descarga</h3>
+            <p>Al terminar, descarga tu PDF desde esta página para entregar tu examen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="formulario" class="panel panel-accent">
+        <div class="section-heading">
+          <p class="eyebrow">Examen</p>
+          <h2>Responde aquí tu examen práctico</h2>
+        </div>
+
+        <form id="practiceForm" class="practice-form">
+          <div class="card-grid two-cols">
+            <div class="field-group">
+              <label for="studentName">Nombre completo</label>
+              <input id="studentName" name="studentName" type="text" placeholder="Escribe tu nombre" required>
+            </div>
+            <div class="field-group">
+              <label for="groupName">Grupo</label>
+              <input id="groupName" name="groupName" type="text" placeholder="Ejemplo: 2° A">
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="examDate">Fecha</label>
+            <input id="examDate" name="examDate" type="text" placeholder="Ejemplo: 1 de junio de 2026">
+          </div>
+
+          <section class="form-section">
+            <h3>Parte 1: Datos sobre los ajolotes</h3>
+            <div class="field-group">
+              <label for="axolotlFact1">Dato 1 del video</label>
+              <textarea id="axolotlFact1" name="axolotlFact1" rows="2" required></textarea>
+            </div>
+            <div class="field-group">
+              <label for="axolotlFact2">Dato 2 del video</label>
+              <textarea id="axolotlFact2" name="axolotlFact2" rows="2" required></textarea>
+            </div>
+            <div class="field-group">
+              <label for="axolotlFact3">Dato 3 del video</label>
+              <textarea id="axolotlFact3" name="axolotlFact3" rows="2" required></textarea>
+            </div>
+            <div class="field-group">
+              <label for="axolotlFact4">Dato 4 del video</label>
+              <textarea id="axolotlFact4" name="axolotlFact4" rows="2" required></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 2: Planeo mi página</h3>
+            <div class="field-group">
+              <label for="pageTitle">¿Qué título pondrás en tu página?</label>
+              <input id="pageTitle" name="pageTitle" type="text" required>
+            </div>
+            <div class="field-group">
+              <label for="pageOrder">¿Cómo organizarás tus bloques?</label>
+              <textarea id="pageOrder" name="pageOrder" rows="3" placeholder="Por ejemplo: título, datos, colores y nombre al final"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="pageColors">¿Qué colores usarás y por qué son adecuados?</label>
+              <textarea id="pageColors" name="pageColors" rows="3"></textarea>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h3>Parte 3: Trabajo en el sistema</h3>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Observe el video"> Observé el video</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Escribi un titulo"> Escribí un título</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Agregue 4 datos"> Agregué 4 datos</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Use bloques correctamente"> Usé bloques correctamente</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Use colores adecuados"> Usé colores adecuados</label>
+              <label class="checkbox-item"><input type="checkbox" name="progress" value="Escribi mi nombre al final"> Escribí mi nombre al final</label>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+            <button type="button" class="btn btn-secondary" id="clearBtn">Limpiar respuestas</button>
+            <button type="submit" class="btn btn-primary">Descargar PDF</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="evaluacion" class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Evaluación</p>
+          <h2>Rúbrica del examen</h2>
+        </div>
+
+        <div class="rubric-table-wrap">
+          <table class="rubric-table">
+            <thead>
+              <tr>
+                <th>Criterio</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Escribió 4 datos del video</td>
+                <td>4 puntos</td>
+              </tr>
+              <tr>
+                <td>La página está ordenada</td>
+                <td>2 puntos</td>
+              </tr>
+              <tr>
+                <td>Usó bloques correctamente</td>
+                <td>2 puntos</td>
+              </tr>
+              <tr>
+                <td>Usó colores y diseño adecuado</td>
+                <td>1 punto</td>
+              </tr>
+              <tr>
+                <td>Escribió su nombre</td>
+                <td>1 punto</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>10 puntos</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

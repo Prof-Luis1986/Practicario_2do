@@ -328,6 +328,32 @@ p {
   border: 2px dashed rgba(77, 171, 247, 0.35);
 }
 
+.video-support {
+  margin: 18px 0;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(238, 252, 247, 0.96));
+  border: 2px solid rgba(0, 184, 148, 0.22);
+}
+
+.video-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(191, 231, 255, 0.95);
+  background: #dff6ff;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .steps {
   display: grid;
   gap: 16px;
@@ -405,6 +431,38 @@ textarea:focus {
   width: 18px;
   height: 18px;
   margin: 0;
+}
+
+.rubric-table-wrap {
+  overflow-x: auto;
+}
+
+.rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  border: 2px solid rgba(191, 231, 255, 0.95);
+}
+
+.rubric-table th,
+.rubric-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 2px solid rgba(191, 231, 255, 0.75);
+}
+
+.rubric-table th {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-blue), var(--secondary));
+  font-family: "Baloo 2", cursive;
+  font-size: 1.15rem;
+}
+
+.rubric-table tr:last-child td {
+  border-bottom: 0;
+  background: #fff9da;
 }
 
 .form-message {
